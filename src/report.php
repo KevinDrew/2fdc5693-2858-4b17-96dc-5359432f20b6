@@ -23,10 +23,10 @@ if ($argc) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////// READ IMPORT FILES
 try {
-    $assessments        = json_decode(file_get_contents('data/assessments.json'));
-    $questions          = json_decode(file_get_contents('data/questions.json'));
-    $studentResponses   = json_decode(file_get_contents('data/student-responses.json'));
-    $students           = json_decode(file_get_contents('data/students.json'));
+    $assessments        = json_decode(file_get_contents('../data/assessments.json'));
+    $questions          = json_decode(file_get_contents('../data/questions.json'));
+    $studentResponses   = json_decode(file_get_contents('../data/student-responses.json'));
+    $students           = json_decode(file_get_contents('../data/students.json'));
 } catch (Exception $e) {
     echo "Error processing input files\n";
     echo $e->getMessage() ."\n";
