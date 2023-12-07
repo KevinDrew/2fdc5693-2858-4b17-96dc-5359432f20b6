@@ -1,0 +1,22 @@
+{
+    "name": "kev/2fdc5693-2858-4b17-96dc-5359432f20b6",
+    "description": "ACER coding challenge attempt by Kevin Drew",
+    "type": "project",
+    "require": {
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kev\\2fdc569328584b1796dc5359432f20b6\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kevin.drew",
+            "email": "drewk538@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
+}
