@@ -3,17 +3,13 @@ define('REPORT_TYPE_DIAGNOSTIC', 1);
 define('REPORT_TYPE_PROGRESS', 2);
 define('REPORT_TYPE_FEEDBACK', 3);
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////// RECEIVE USER INPUT
-if ($argc) {
-    $studentId = $argv[1];
+if ($argc > 1) {
+    $studentId = $argv[1];   // command line arguments input convenient for testing
     $reportType = $argv[2];
 } else {
-    echo "Report to generate (1 for Diagnostic, 2 for Progress, 3 for Feedback): <report-number-by-user> ";
-    $reportType = readline();
-
-    echo "Please enter the following
-    Student ID: ";
+    echo "Please enter the following\n";
+    echo "Student ID: ";
     $studentId = readline();
     $student = null;
 
@@ -23,10 +19,10 @@ if ($argc) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////// READ IMPORT FILES
 try {
-    $assessments        = json_decode(file_get_contents('../data/assessments.json'));
-    $questions          = json_decode(file_get_contents('../data/questions.json'));
-    $studentResponses   = json_decode(file_get_contents('../data/student-responses.json'));
-    $students           = json_decode(file_get_contents('../data/students.json'));
+    $assessments        = json_decode(file_get_contents('data/assessments.json'));
+    $questions          = json_decode(file_get_contents('data/questions.json'));
+    $studentResponses   = json_decode(file_get_contents('data/student-responses.json'));
+    $students           = json_decode(file_get_contents('data/students.json'));
 } catch (Exception $e) {
     echo "Error processing input files\n";
     echo $e->getMessage() ."\n";
